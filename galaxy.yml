@@ -1,0 +1,27 @@
+---
+namespace: namespace
+name: collection_name
+
+version: 1.0.0
+readme: README.md
+authors:
+  - author
+
+description: description
+
+license:
+  - MIT
+
+tags:
+  - tag
+
+dependencies: {}
+
+repository: https://github.com/repository
+documentation: https://github.com/documentation
+homepage: https://github.com/homepage
+issues: https://github.com/issues
+
+build_ignore:
+  - "molecule"
+  - "*.tar.gz"

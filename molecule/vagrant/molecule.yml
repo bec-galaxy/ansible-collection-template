@@ -1,0 +1,26 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+platforms:
+  - name: default
+    box: ${VAGRANT_BOX}
+    memory: 4096
+    cpus: 4
+    provider_options:
+      linked_clone: true
+    config_options:
+      ssh.keep_alive: true
+provisioner:
+  name: ansible
+  inventory:
+    group_vars:
+      all:
+        ansible_user: root
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+scenario:
+  name: default
