@@ -10,14 +10,10 @@ platforms:
     image: ubuntu:22.04
 provisioner:
   name: ansible
-  # config_options:
-  #   tags:
-  #     run: setup
-  # inventory:
-  #   group_vars:
-  #     all:
-  #       ansible_user: root
-
+  inventory:
+    group_vars:
+      all:
+        ansible_user: root
 lint: |
   set -e
   yamllint .

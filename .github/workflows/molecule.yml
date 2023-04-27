@@ -8,20 +8,15 @@ jobs:
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
+    env:
+      PY_COLORS: "1"
+      ANSIBLE_FORCE_COLOR: "1"
     steps:
-      - name: Check out the codebase
+      - name: Checkout the codebase
         uses: actions/checkout@v3
 
-      - name: Set up Python 3
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.x"
-
-      - name: Install test dependencies
-        run: pip install ansible yamllint ansible-lint molecule molecule-plugins
+      - name: Setup Molecule
+        uses: bec-galaxy/setup-molecule@v1
 
       - name: Run Molecule tests
         run: molecule test
-        env:
-          PY_COLORS: "1"
-          ANSIBLE_FORCE_COLOR: "1"
