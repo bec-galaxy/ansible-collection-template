@@ -4,10 +4,18 @@ dependency:
 driver:
   name: docker
 platforms:
+  # Ubuntu Focal Fossa
   - name: ubuntu-20.04
     image: ubuntu:20.04
+  # Ubuntu Jammy Jellyfish
   - name: ubuntu-22.04
     image: ubuntu:22.04
+  # Debian Bullseye
+  - name: debian-11
+    image: debian:11
+  # Debian Buster
+  - name: debian-10
+    image: debian:10
 provisioner:
   name: ansible
   inventory:
