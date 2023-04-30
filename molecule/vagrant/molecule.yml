@@ -18,9 +18,5 @@ provisioner:
     group_vars:
       all:
         ansible_user: root
-lint: |
-  set -e
-  yamllint .
-  ansible-lint
 scenario:
   name: default
